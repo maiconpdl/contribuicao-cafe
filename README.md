@@ -29,68 +29,7 @@ Nota: Nas execuções seguintes (sem alterações no código-fonte), você pode 
 
     docker compose up.
 
-💻 Opção 2: Executando Manualmente
-Caso queira rodar o projeto localmente sem utilizar containers.
 
-📋 Pré-requisitos
-JDK 17 ou superior instalado.
-
-Node.js (versão 18 ou superior) e npm instalados.
-
-Angular CLI instalado  (npm install -g @angular/cli).
-
-🍃 1. Backend (Spring Boot)
-Como a aplicação utiliza o H2 Database local, não é necessário instalar nem subir nenhum servidor de banco de dados externo.
-
-Abra um terminal na pasta do backend:
-
-
-    cd backend
-
-Execute a aplicação utilizando o Maven:
-
-Windows (CMD / PowerShell):
-
-    .\mvnw.cmd spring-boot:run
-
-
-Linux / macOS:
-
-    ./mvnw spring-boot:run
-
-
-O servidor backend iniciará na porta 8080.
-
-
-
-🅰️ 2. Frontend (Angular)
-Abra um segundo terminal na pasta do frontend:
-
-
-cd frontend
-Instale as dependências do projeto (apenas primeira execução):
-
-
-    npm install
-
-Inicie o servidor:
-
-
-
-
-    npm start   
-    
-ou
-    
-    ng serve
-
-Acesse no navegador: http://localhost:4200.
-
-
-
-📑 Documentação da API (Swagger / OpenAPI)
-
-URL de acesso: http://localhost:8080/swagger-ui/index.html
 
 
 
