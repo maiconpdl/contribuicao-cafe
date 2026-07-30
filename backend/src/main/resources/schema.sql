@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS cafe;
+DROP TABLE IF EXISTS funcionarios;
+
+CREATE TABLE IF NOT EXISTS funcionarios(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS cafe(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    funcionario_id BIGINT NOT NULL,
+    item VARCHAR(100) NOT NULL,
+    data DATE NOT NULL,
+    entregue BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (funcionario_id) references funcionarios(id)
+);
