@@ -214,7 +214,7 @@ export class App implements OnInit{
     valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
     valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
-    // 4. Atualiza o valor no input e na variável do componente
+
     input.value = valor;
     this.cpf = valor;
   }

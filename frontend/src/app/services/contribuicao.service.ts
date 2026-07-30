@@ -9,7 +9,7 @@ import { Contribuicao } from '../models/contribuicao.model';
 export class ContribuicaoService {
 
   // URL da API Spring Boot
-  private readonly apiUrl = 'https://striking-strength-production-a6f1.up.railway.app/contribuicao';
+  private readonly apiUrl = 'http://localhost:8080/contribuicao';
 
   // Injeta as requisições HTTP do Angular
   private http = inject(HttpClient);
