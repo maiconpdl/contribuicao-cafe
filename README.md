@@ -1,5 +1,11 @@
 ☕ Contribuição Café
-Aplicação full-stack desenvolvida para organizar e gerenciar os itens das listas de café da manhã da equipe. O sistema permite o cadastro de colaboradores, itens e datas, garantindo a organização sem duplicidades no mesmo dia.
+Aplicação desenvolvida para organizar e gerenciar os itens das listas de café da manhã da equipe. O sistema permite o cadastro de colaboradores, itens e datas, garantindo a organização sem duplicidades no mesmo dia.
+
+Disponivel em https://contribuicao-cafe-production.up.railway.app/
+
+Links da aplicação:
+
+Swagger : https://striking-strength-production-a6f1.up.railway.app/swagger-ui/index.html
 
 🛠️ Tecnologias Utilizadas
 Backend: Java 17+, Spring Boot 3, Spring Data JPA / JDBC, H2 Database (Banco em memória), OpenAPI 3 / Swagger
