@@ -106,6 +106,8 @@ Caso ainda não tenha instalado: Execute npm install na raiz do projeto frontend
 
 Navegador Web: Google Chrome, Mozilla Firefox ou Microsoft Edge instalados na máquina (o Cypress usará um deles para rodar os testes).
 
+
+
 🚀 Passos para Execução
 
 Acesse o a pasta do frontend no terminal e navegue até a pasta raiz da aplicação Angular.
