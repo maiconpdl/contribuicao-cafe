@@ -1,0 +1,135 @@
+<div style="padding: 20px; font-family: sans-serif;">
+  <h2>Lista de Contribuições do Café</h2>
+
+  <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <label for="dataInput">Filtrar por data: </label>
+      <input
+        type="date"
+        id="dataInput"
+        (change)="carregarDados()"
+        [(ngModel)]="dataFiltro"
+      />
+      <button (click)="carregarDados()" style="margin-left: 10px;">
+        Buscar
+      </button>
+    </div>
+  </div>
+
+  <!-- FORMULÁRIO DE CADASTRO / EDIÇÃO -->
+
+  <div style="background-color: #f8f9fa; border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+    @if (mensagem) {
+      <label name="mensagem"><h5 style="color: red;">{{ mensagem }}</h5></label>
+    }
+
+    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 10px;">
+      <div>
+        <label>ID:</label><br />
+        <input type="number" [(ngModel)]="id" name="id" [disabled]="true" placeholder="Ex: 1" />
+      </div>
+
+      <div>
+        <label>Funcionario:</label><br />
+        <input 
+          type="text" 
+          [disabled]="!!id" 
+          [(ngModel)]="nome" 
+          name="funcionario" 
+          placeholder="Funcionario" 
+        />
+      </div>
+
+      <div>
+        <label>CPF:</label><br />
+        <input 
+          type="text" 
+          [disabled]="!!id" 
+          [(ngModel)]="cpf" 
+          (input)="formatarCpf($event)" 
+          name="cpf" 
+          placeholder="CPF" 
+          required 
+          maxlength="14" 
+          minlength="14" 
+          #cpfInput="ngModel"
+        />
+        @if (cpfInput.invalid && cpfInput.touched) {
+          <span style="color: red; font-size: 11px; display: block;">
+            @if (cpfInput.errors?.['required']) {
+              O CPF é obrigatório.
+            }
+            @if (cpfInput.errors?.['minlength']) {
+              O CPF deve ter 11 caracteres.
+            }
+          </span>
+        }
+      </div>
+
+      <div>
+        <label>Item:</label><br />
+        <input type="text" [(ngModel)]="item" name="item" placeholder="Ex: Pão de Queijo" />
+      </div>
+
+      <div>
+        <label>Data:</label><br />
+        <input type="date" [(ngModel)]="data" name="data" />
+      </div>
+    </div>
+
+    <div>
+      <button (click)="novaContribuicao()" style="background-color: #007bff; color: white; border: none; padding: 6px 12px; cursor: pointer; margin-right: 8px;">
+        Salvar
+      </button>
+      <button (click)="limparFormulario()" style="background-color: #6c757d; color: white; border: none; padding: 6px 12px; cursor: pointer;">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
+  <!-- TABELA -->
+  <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>Data</th>
+        <th>CPF</th>
+        <th>Funcionário</th>
+        <th>Item</th>
+        <th>Entregue?</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contribuicao of listaContribuicoes">
+        <td>{{ contribuicao.data }}</td>
+        <td>{{ contribuicao.funcionarioCpf }}</td>
+        <td>{{ contribuicao.funcionarioNome }}</td>
+        <td>{{ contribuicao.item }}</td>
+        <td>
+          @if (ehHoje) {
+            <label style="cursor: pointer;">
+              <input
+                type="checkbox"
+                [(ngModel)]="contribuicao.entregue"
+                (change)="alterarStatus(contribuicao)"
+              />
+              {{ contribuicao.entregue ? 'Entregue' : 'Pendente' }}
+            </label>
+          } @else {
+            <span>{{ contribuicao.entregue ? 'Sim' : 'Não' }}</span>
+          }
+        </td>
+        <td>
+          <button (click)="carregaContribuicaoForm(contribuicao)" style="margin-right: 5px; cursor: pointer;">
+            Editar
+          </button>
+          <button (click)="excluir(contribuicao.id)" style="color: red; cursor: pointer;">
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet />
