@@ -1,4 +1,5 @@
 ☕ Contribuição Café
+
 Aplicação desenvolvida para organizar e gerenciar os itens das listas de café da manhã da equipe. O sistema permite o cadastro de colaboradores, itens e datas, garantindo a organização sem duplicidades no mesmo dia.
 
 Aplicação disponivel em:
