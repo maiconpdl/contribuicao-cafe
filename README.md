@@ -76,7 +76,9 @@ Instale as dependências do projeto (apenas primeira execução):
 
     npm install
 
-Inicie o servidor de desenvolvimento:
+Inicie o servidor:
+
+
 
 
     npm start   
