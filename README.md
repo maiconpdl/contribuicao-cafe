@@ -79,7 +79,11 @@ Instale as dependências do projeto (apenas primeira execução):
 Inicie o servidor de desenvolvimento:
 
 
-    npm start   ou   ng serve
+    npm start   
+    
+ou
+    
+    ng serve
 
 Acesse no navegador: http://localhost:4200.
 
