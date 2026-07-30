@@ -3,9 +3,6 @@ Aplicação desenvolvida para organizar e gerenciar os itens das listas de café
 
 Aplicação disponivel em https://contribuicao-cafe-production.up.railway.app/
 
-Links da aplicação:
-
-Swagger : https://striking-strength-production-a6f1.up.railway.app/swagger-ui/index.html
 
 
 🚀 Opção 1: Executando via Docker Compose (Recomendado)
