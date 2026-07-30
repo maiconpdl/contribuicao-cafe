@@ -1,12 +1,14 @@
 ☕ Contribuição Café
 Aplicação desenvolvida para organizar e gerenciar os itens das listas de café da manhã da equipe. O sistema permite o cadastro de colaboradores, itens e datas, garantindo a organização sem duplicidades no mesmo dia.
 
-Aplicação disponivel em https://contribuicao-cafe-production.up.railway.app/
+Aplicação disponivel em:
+
+    https://contribuicao-cafe-production.up.railway.app/
 
 
 
-🚀 Opção 1: Executando via Docker Compose (Recomendado)
-Esta forma sobe tanto o backend (Spring Boot) quanto o frontend (Angular) já integrados em containers de forma automatizada.
+🚀  Executando via Docker Compose
+
 
 📋 Pré-requisitos
 Docker Desktop instalado e em execução na máquina.
@@ -19,16 +21,23 @@ Execute o comando para construir e subir os containers:
 
     docker compose up --build
 
-Assim que finalizado, a aplicação estará disponível em:
+Na primeira execução, a construção das imagens pode levar alguns minutos.
 
-Frontend (Angular): http://localhost:4200
+Após a inicialização, a aplicação estará disponível em:
 
-Backend (Spring Boot API): http://localhost:8080
+- Frontend: http://localhost:4200
+- Backend (API): http://localhost:8080
 
-Nota: Nas execuções seguintes (sem alterações no código-fonte), você pode rodar apenas 
+Nas próximas execuções, basta utilizar:
 
-    docker compose up.
 
+    docker compose up
+
+
+Para interromper a aplicação:
+
+
+    docker compose down
 
 
 
